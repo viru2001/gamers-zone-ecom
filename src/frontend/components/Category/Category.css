@@ -1,0 +1,39 @@
+:root {
+  --card-border-color: #c9c9c9;
+}
+
+.category-card-heading {
+  font-size: 2rem;
+  color: var(--dark-text-color);
+}
+
+.featured-card {
+  width: 20rem;
+  border: solid 1px var(--card-border-color);
+}
+
+.featured-card:hover {
+  border: solid 1px var(--primary-color);
+  background-color: var(--primary-light-color);
+}
+
+#monitor-img {
+    padding: 1rem;
+    margin-top: 1.8rem;
+}
+
+#chair-img {
+  width: 47%;
+}
+
+#keyboard-img {
+  width: 80%;
+}
+
+#headphone-img {
+  width: 80%;
+}
+
+#mouse-img {
+  width: 70%;
+}
