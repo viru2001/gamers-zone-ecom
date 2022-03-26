@@ -64,3 +64,8 @@
     font-size: 1.2rem;
   }
 }
+@media (min-width: 900px) {
+  .carousel-image {
+    height: 70vh;
+  }
+}
