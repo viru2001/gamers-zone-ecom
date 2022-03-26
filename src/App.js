@@ -1,10 +1,11 @@
 import { Navbar, Footer } from "./frontend/components/index.js";
-import { Home } from "./frontend/pages/Home/Home.jsx";
+import { Router } from "./frontend/routes/Router.jsx";
+
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <Router />
       <Footer />
     </>
   );
