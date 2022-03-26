@@ -1,0 +1,7 @@
+.price-input {
+  width: 95%;
+}
+.price-range-txt {
+  flex: 1;
+  font-size: 1.3rem;
+}
