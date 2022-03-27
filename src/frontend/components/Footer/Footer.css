@@ -1,0 +1,10 @@
+.footer {
+  background-color: var(--primary-light-color);
+}
+.footer-social-icon {
+  text-decoration: none;
+  color: var(--black-color);
+}
+.footer-social-icon:hover {
+  color: var(--white-color);
+}
