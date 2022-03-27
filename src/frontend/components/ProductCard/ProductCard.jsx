@@ -11,7 +11,7 @@ const ProductCard = ({
   const isDiscountGiven = savePercent === 0 ? false : true;
   return (
     <div className="card-wrapper product-card place-center p-relative">
-      {tag === "" ? null : (
+      {tag && (
         <span className="vertical-card-badge text-sm p-3 p-absolute">
           {tag}
         </span>
