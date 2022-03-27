@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { Filters, ProductList } from "../../components";
-import { useProduct } from "../../Context/";
+import { useProduct } from "../../context";
 import {
   getSortedProducts,
   getCateogrisedProducts,

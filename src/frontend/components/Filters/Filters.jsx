@@ -1,4 +1,4 @@
-import { useProduct } from "../../Context/";
+import { useProduct } from "../../context";
 import "./Filters.css";
 const Filters = () => {
   const [

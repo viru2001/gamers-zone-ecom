@@ -16,7 +16,6 @@ const ProductInitialState = {
 };
 
 const ProductReducer = (productState, { type, payload }) => {
-  console.log(productState);
   switch (type) {
     case "LOAD_PRODUCTS":
       return { ...productState, products: payload };
