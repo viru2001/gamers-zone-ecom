@@ -1,0 +1,6 @@
+:root {
+  --rating-text-color: #de7921;
+}
+.product-rating {
+  color: var(--rating-text-color);
+}

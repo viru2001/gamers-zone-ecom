@@ -1,0 +1,58 @@
+/* @import "./card.css"; */
+:root {
+  --card-border-color: #c9c9c9;
+  --clear-btn-bg: #d31609;
+}
+
+/* filter section */
+.filter-wrapper {
+  width: 30rem;
+}
+.btn-clear {
+  background-color: var(--clear-btn-bg);
+  font-size: 1.2em;
+}
+/* full page grid layout */
+.wrapper {
+  grid-template-columns: 35rem 1fr;
+  grid-template-areas: "filters products";
+}
+
+#filters {
+  grid-area: filters;
+  width: 32rem;
+  height: calc(100vh - 15rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 2rem;
+}
+
+/* utility */
+.place-center {
+  justify-self: center;
+  align-self: center;
+}
+/* products grid layout */
+#products {
+  grid-area: products;
+  width: calc(100vw - 45rem);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+}
+
+@media (max-width: 820px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "filters filters"
+      "products products";
+  }
+  #filters {
+    position: static;
+    margin: 0 auto;
+    height: 35rem;
+  }
+  #products {
+    width: 100vw;
+  }
+}
