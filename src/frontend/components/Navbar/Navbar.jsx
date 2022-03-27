@@ -17,20 +17,17 @@ const Navbar = () => {
       <section id="nav-menu-without-hamburger" className="d-flex m-2">
         <nav className="nav-links d-flex align-center">
           <NavItem
-            isNumberReqd={false}
             navItemTitle={"Products"}
             icon={"store"}
             navigateTo={"/products"}
           />
           <NavItem
-            isNumberReqd={true}
             number={0}
             navItemTitle={"Cart"}
             icon={"shopping-cart"}
             navigateTo={"/cart"}
           />
           <NavItem
-            isNumberReqd={true}
             number={0}
             navItemTitle={"Wishlist"}
             icon={"heart"}
