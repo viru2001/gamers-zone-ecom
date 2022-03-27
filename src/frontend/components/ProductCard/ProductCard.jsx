@@ -27,20 +27,16 @@ const ProductCard = ({
         <p className="font-wt-bold text-center text-sm">{name}</p>
       </div>
       <div className="px-8 py-2">
-        {isDiscountGiven ? (
+        {
           <div className="product-price-wrapper">
             <span className="product-discount-price text-sm font-wt-bold">
               {`Rs. ${discountPrice}`}
             </span>
-            <span className="product-original-price text-sm ml-6">{`Rs. ${originalPrice}`}</span>
+            {isDiscountGiven && (
+              <span className="product-original-price text-sm ml-6">{`Rs. ${originalPrice}`}</span>
+            )}
           </div>
-        ) : (
-          <div className="product-price-wrapper">
-            <span className="product-discount-price text-sm font-wt-bold">
-              {`Rs. ${discountPrice}`}
-            </span>{" "}
-          </div>
-        )}
+        }
 
         <div className="w-100 d-flex">
           {isDiscountGiven ? (
