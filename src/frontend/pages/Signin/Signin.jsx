@@ -17,6 +17,7 @@ const Signin = () => {
     const [name, authToken] = await signinService(user);
     if (authToken !== undefined) {
       localStorage.setItem("AUTH_TOKEN", authToken);
+      localStorage.setItem("username", name);
       setAuth(auth => ({
         ...auth,
         status: true,
