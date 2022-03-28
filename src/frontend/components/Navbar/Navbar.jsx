@@ -10,6 +10,7 @@ const Navbar = () => {
   } = useAuth();
   const signOutHandler = setAuth => {
     localStorage.removeItem("AUTH_TOKEN");
+    localStorage.removeItem("username");
     setAuth(auth => ({
       ...auth,
       status: false,

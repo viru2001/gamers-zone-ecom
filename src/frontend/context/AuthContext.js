@@ -6,7 +6,7 @@ const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
     status: localStorage.getItem("AUTH_TOKEN") ? true : false,
     token: localStorage.getItem("AUTH_TOKEN"),
-    username: "",
+    username: localStorage.getItem("username") || "",
   });
 
   return (
