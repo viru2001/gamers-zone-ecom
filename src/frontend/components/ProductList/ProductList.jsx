@@ -1,8 +1,11 @@
 import { ProductCard } from "../../components";
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, page }) => {
   return (
-    <section id="products" className="d-grid mt-8">
+    <section
+      id={page === "Products" ? "products" : "wishlist-cards-wrapper"}
+      className={page === "Products" ? "d-grid mt-8" : "d-grid m-8"}
+    >
       {products.length > 0 ? (
         products.map(
           ({
@@ -25,6 +28,7 @@ const ProductList = ({ products }) => {
                 tag={tag}
                 savePercent={savePercent}
                 rating={rating}
+                page={page}
               />
             );
           }

@@ -7,6 +7,7 @@ const ProductCard = ({
   tag,
   savePercent,
   rating,
+  page,
 }) => {
   const isDiscountGiven = savePercent === 0 ? false : true;
   return (
@@ -50,22 +51,34 @@ const ProductCard = ({
           </div>
         </div>
       </div>
-      <div className="card-btns-wrapper p-3 d-flex flex-col">
-        <button
-          type="button"
-          className="btn btn-primary rounded-sm text-sm p-3 mx-4"
-        >
-          <i className="fas fa-shopping-cart mr-3"></i>
-          Add to Cart
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
-        >
-          <i className="fas fa-heart mr-3"></i>
-          Add to Wishlist
-        </button>
-      </div>
+      {page === "Products" ? (
+        <div className="card-btns-wrapper p-3 d-flex flex-col">
+          <button
+            type="button"
+            className="btn btn-primary rounded-sm text-sm p-3 mx-4"
+          >
+            <i className="fas fa-shopping-cart mr-3"></i>
+            Add to Cart
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
+          >
+            <i className="fas fa-heart mr-3"></i>
+            Add to Wishlist
+          </button>
+        </div>
+      ) : (
+        <div className="card-btns-wrapper p-3 d-flex flex-col">
+          <button
+            type="button"
+            className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
+          >
+            <i className="fas fa-heart mr-3"></i>
+            Remove from Wishlist
+          </button>
+        </div>
+      )}
     </div>
   );
 };
