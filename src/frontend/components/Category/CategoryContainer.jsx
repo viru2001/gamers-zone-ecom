@@ -8,8 +8,12 @@ const CategoryContainer = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     (async () => {
-      const categoriesResponse = await axios.get("/api/categories");
-      setCategories(categoriesResponse.data.categories);
+      try {
+        const categoriesResponse = await axios.get("/api/categories");
+        setCategories(categoriesResponse.data.categories);
+      } catch (e) {
+        console.log(e);
+      }
     })();
   }, []);
   return (
