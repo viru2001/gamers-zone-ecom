@@ -47,7 +47,6 @@ export const addItemToWishlistHandler = function (schema, request) {
     }
     const userWishlist = schema.users.findBy({ _id: userId }).wishlist;
     const { product } = JSON.parse(request.requestBody);
-    console.log(product);
     userWishlist.push({
       ...product,
       createdAt: formatDate(),

@@ -13,11 +13,9 @@ const ProductProvider = ({ children }) => {
   const { auth } = useAuth();
 
   useEffect(() => {
-    console.log(auth.status);
     if (auth.status) {
       fetchWishlist(productDispatch, auth.token);
     } else {
-      console.log("in else of useEffect");
       productDispatch({ type: "RESET_WISHLIST" });
     }
   }, [auth]);

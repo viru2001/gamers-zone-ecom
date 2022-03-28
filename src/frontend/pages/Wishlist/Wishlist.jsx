@@ -4,7 +4,6 @@ import "./Wishlist.css";
 
 const Wishlist = () => {
   const [{wishlist}] = useProduct();
-  console.log(wishlist);
   return <ProductList products={wishlist} page={"Wishlist"} />;
 };
 
