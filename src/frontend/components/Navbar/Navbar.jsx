@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useProduct } from "../../context";
 import "./Navbar.css";
 import { NavItem } from "./NavItem";
 
@@ -18,6 +18,7 @@ const Navbar = () => {
       username: "",
     }));
   };
+  const [{ wishlist }] = useProduct();
   return (
     <header className="navbar-wrapper d-flex align-center justify-around box-shadow-lg">
       <Link
@@ -43,7 +44,7 @@ const Navbar = () => {
             navigateTo={"/cart"}
           />
           <NavItem
-            number={0}
+            number={wishlist.length}
             navItemTitle={"Wishlist"}
             icon={"heart"}
             navigateTo={"/wishlist"}
