@@ -25,7 +25,6 @@ const ProductCard = ({ product, page }) => {
     auth: { status, token },
   } = useAuth();
   const [{ wishlist, cart }, productDispatch] = useProduct();
-  console.log(cart);
   const navigate = useNavigate();
   return (
     <div className="card-wrapper product-card place-center p-relative">

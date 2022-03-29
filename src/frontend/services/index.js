@@ -1,3 +1,4 @@
+export { removeFromCartService } from "./CartServices/removeFromCartService.js";
 export { addToCartService } from "./CartServices/addToCartService.js";
 export { getCartService } from "./CartServices/getCartService.js";
 export { addToWishlistService } from "./WishlistServices/addToWishlistService.js";

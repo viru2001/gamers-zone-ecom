@@ -153,11 +153,27 @@ const ProductReducer = (productState, { type, payload }) => {
               productState.orderDetails.totalMRP + product.originalPrice,
             discount:
               productState.orderDetails.discount +
-              product.originalPrice -
-              product.discountPrice,
+              (product.originalPrice - product.discountPrice),
+          },
+        };
+      if (operation === "remove")
+        return {
+          ...productState,
+          orderDetails: {
+            ...productState.orderDetails,
+            totalMRP:
+              productState.orderDetails.totalMRP - product.originalPrice,
+            discount:
+              productState.orderDetails.discount -
+              (product.originalPrice - product.discountPrice),
           },
         };
       break;
+    case "REMOVE_FROM_CART":
+      return {
+        ...productState,
+        cart: payload,
+      };
     default:
       return productState;
   }

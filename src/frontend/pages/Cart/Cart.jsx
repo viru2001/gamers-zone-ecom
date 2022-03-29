@@ -4,7 +4,6 @@ import "./Cart.css";
 
 const Cart = () => {
   const [{ cart, orderDetails }] = useProduct();
-  console.log(cart);
   return (
     <div className="cart-cards-wrapper d-grid">
       <CartItemsList products={cart} />

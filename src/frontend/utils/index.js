@@ -1,3 +1,4 @@
+export { removeFromCart } from "./cart/removeFromCart.js";
 export { isProductInCart } from "./cart/isProductInCart.js";
 export { addToCart } from "./cart/addToCart.js";
 export { fetchCart } from "./cart/fetchCart.js";
