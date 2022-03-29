@@ -14,6 +14,8 @@ const ProductInitialState = {
     rating: 0,
   },
   wishlist: [],
+  cart: [],
+  orderDetails: { totalMRP: 0, discount: 0, delivery: 0 },
 };
 
 const ProductReducer = (productState, { type, payload }) => {
@@ -113,10 +115,12 @@ const ProductReducer = (productState, { type, payload }) => {
         ...productState,
         wishlist: payload,
       };
-    case "RESET_WISHLIST":
+    case "RESET_WISHLIST_AND_CART":
       return {
         ...productState,
         wishlist: [],
+        cart: [],
+        orderDetails: { totalMRP: 0, discount: 0, delivery: 0 },
       };
     case "ADD_TO_WISHLIST":
       return {
@@ -128,6 +132,32 @@ const ProductReducer = (productState, { type, payload }) => {
         ...productState,
         wishlist: productState.wishlist.filter(item => item._id !== payload),
       };
+    case "FETCH_CART":
+      return {
+        ...productState,
+        cart: payload,
+      };
+    case "ADD_TO_CART":
+      return {
+        ...productState,
+        cart: payload,
+      };
+    case "UPDATE_ORDER_DETAILS":
+      const [operation, product] = payload;
+      if (operation === "add")
+        return {
+          ...productState,
+          orderDetails: {
+            ...productState.orderDetails,
+            totalMRP:
+              productState.orderDetails.totalMRP + product.originalPrice,
+            discount:
+              productState.orderDetails.discount +
+              product.originalPrice -
+              product.discountPrice,
+          },
+        };
+      break;
     default:
       return productState;
   }

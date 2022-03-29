@@ -8,8 +8,7 @@ const CartItemCard = ({ product }) => {
     tag,
     savePercent,
     rating,
-    _id,
-    quantity,
+    qty,
   } = product;
   const isDiscountGiven = savePercent === 0 ? false : true;
   return (
@@ -65,11 +64,11 @@ const CartItemCard = ({ product }) => {
             >
               <i className="fas fa-plus text-sm"></i>
             </button>
-            <span className="text-sm mx-2 font-wt-semibold">{quantity}</span>
+            <span className="text-sm mx-2 font-wt-semibold">{qty}</span>
             <button
               type="button"
               className="btn btn-quantity btn-outline btn-primary-outline rounded-full"
-              disabled={quantity <= 1}
+              disabled={qty <= 1}
             >
               <i className="fas fa-minus text-sm"></i>
             </button>

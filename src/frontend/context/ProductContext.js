@@ -1,6 +1,6 @@
 import { useContext, useReducer, createContext, useEffect } from "react";
 import { ProductInitialState, ProductReducer } from "../reducer";
-import { fetchWishlist } from "../utils";
+import { fetchWishlist, fetchCart } from "../utils";
 import { useAuth } from "./AuthContext";
 
 const ProductContext = createContext();
@@ -15,8 +15,9 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     if (auth.status) {
       fetchWishlist(productDispatch, auth.token);
+      fetchCart(productDispatch, auth.token);
     } else {
-      productDispatch({ type: "RESET_WISHLIST" });
+      productDispatch({ type: "RESET_WISHLIST_AND_CART" });
     }
   }, [auth]);
 

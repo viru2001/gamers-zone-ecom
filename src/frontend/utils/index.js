@@ -1,3 +1,6 @@
+export { isProductInCart } from "./cart/isProductInCart.js";
+export { addToCart } from "./cart/addToCart.js";
+export { fetchCart } from "./cart/fetchCart.js";
 export { removeFromWishlist } from "./wishlist/removeFromWishlist.js";
 export { isProductInWishlist } from "./wishlist/isProductInWishlist.js";
 export { addToWishlist } from "./wishlist/addToWishlist.js";

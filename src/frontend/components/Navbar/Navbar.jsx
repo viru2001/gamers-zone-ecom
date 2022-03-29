@@ -18,7 +18,7 @@ const Navbar = () => {
       username: "",
     }));
   };
-  const [{ wishlist }] = useProduct();
+  const [{ wishlist, cart }] = useProduct();
   return (
     <header className="navbar-wrapper d-flex align-center justify-around box-shadow-lg">
       <Link
@@ -38,7 +38,7 @@ const Navbar = () => {
             navigateTo={"/products"}
           />
           <NavItem
-            number={0}
+            number={cart.length}
             navItemTitle={"Cart"}
             icon={"shopping-cart"}
             navigateTo={"/cart"}
