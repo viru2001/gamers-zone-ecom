@@ -15,7 +15,6 @@ const ProductInitialState = {
   },
   wishlist: [],
   cart: [],
-  orderDetails: { totalMRP: 0, discount: 0, delivery: 0 },
 };
 
 const ProductReducer = (productState, { type, payload }) => {
