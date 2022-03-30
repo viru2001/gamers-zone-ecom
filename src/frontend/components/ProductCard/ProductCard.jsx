@@ -5,6 +5,7 @@ import {
   addToWishlist,
   isProductInCart,
   isProductInWishlist,
+  moveToCart,
   removeFromWishlist,
 } from "../../utils";
 import "./ProductCard.css";
@@ -118,6 +119,22 @@ const ProductCard = ({ product, page }) => {
         </div>
       ) : (
         <div className="card-btns-wrapper p-3 d-flex flex-col">
+          <button
+            type="button"
+            className="btn btn-primary rounded-sm text-sm p-3 mx-4"
+            onClick={() => {
+              moveToCart(
+                product,
+                token,
+                productDispatch,
+                isProductInCart(cart, _id)
+              );
+              navigate("/cart");
+            }}
+          >
+            <i className="fas fa-shopping-cart mr-3"></i>
+            Move to Cart
+          </button>
           <button
             type="button"
             className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
