@@ -1,7 +1,7 @@
 import { useProduct, useAuth } from "../../context";
 import { useNavigate } from "react-router-dom";
 import { checkout } from "../../utils";
-const OrderDeatilsCard = () => {
+const OrderDetailsCard = () => {
   const navigate = useNavigate();
   const {
     auth: { token },
@@ -57,4 +57,4 @@ const OrderDeatilsCard = () => {
     </div>
   );
 };
-export { OrderDeatilsCard };
+export { OrderDetailsCard };

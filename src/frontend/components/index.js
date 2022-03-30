@@ -1,4 +1,4 @@
-export { OrderDeatilsCard } from "./OrderDetailsCard/OrderDetailsCard";
+export { OrderDetailsCard } from "./OrderDetailsCard/OrderDetailsCard";
 export { CartItemCard } from "./CartItemCard/CartItemCard";
 export { CartItemsList } from "./CartItemsList/CartItemsList";
 export { RequireAuth } from "./RequireAuth/RequireAuth";

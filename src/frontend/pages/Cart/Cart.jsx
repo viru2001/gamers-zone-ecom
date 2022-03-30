@@ -1,4 +1,4 @@
-import { CartItemsList, OrderDeatilsCard } from "../../components";
+import { CartItemsList, OrderDetailsCard } from "../../components";
 import { useProduct } from "../../context";
 import "./Cart.css";
 
@@ -8,7 +8,7 @@ const Cart = () => {
     <div className="cart-cards-wrapper d-grid">
       <CartItemsList products={cart} />
       <section id="order-details" className="p-sticky">
-        <OrderDeatilsCard orderDetails={orderDetails} />
+        <OrderDetailsCard orderDetails={orderDetails} />
       </section>
     </div>
   );
