@@ -39,9 +39,9 @@ const ProductCard = ({
         }
 
         <div className="w-100 d-flex">
-          {isDiscountGiven ? (
+          {isDiscountGiven && (
             <span className="product-discount font-wt-bold text-sm">{`Save ${savePercent}%`}</span>
-          ) : null}
+          )}
           <div className="product-rating font-wt-bold text-sm ml-auto">
             <span>{rating}</span>
             <span>

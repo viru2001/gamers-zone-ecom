@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context";
 import "./Navbar.css";
 import { NavItem } from "./NavItem";
 
 const Navbar = () => {
+  const {
+    auth: { status, username },
+    setAuth,
+  } = useAuth();
+  const signOutHandler = setAuth => {
+    localStorage.removeItem("AUTH_TOKEN");
+    localStorage.removeItem("username");
+    setAuth(auth => ({
+      ...auth,
+      status: false,
+      token: null,
+      username: "",
+    }));
+  };
   return (
     <header className="navbar-wrapper d-flex align-center justify-around box-shadow-lg">
       <Link
@@ -33,6 +48,24 @@ const Navbar = () => {
             icon={"heart"}
             navigateTo={"/wishlist"}
           />
+          <div className="ml-4">
+            {status === true ? (
+              <button
+                className="btn text-dec-none btn-primary rounded-sm text-sm p-4 mr-4"
+                onClick={() => signOutHandler(setAuth)}
+              >
+                Signout
+              </button>
+            ) : (
+              <Link
+                to="/signin"
+                className="btn text-dec-none btn-primary rounded-sm text-sm p-4 mr-4"
+              >
+                Signin
+              </Link>
+            )}
+          </div>
+          {username && <h3 className="headline-sm">{`Welcome ${username}`}</h3>}
         </nav>
       </section>
     </header>
