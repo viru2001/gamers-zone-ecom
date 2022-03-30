@@ -1,3 +1,4 @@
+export { updateQuantityService } from "./CartServices/updateQuantityService.js";
 export { removeFromCartService } from "./CartServices/removeFromCartService.js";
 export { addToCartService } from "./CartServices/addToCartService.js";
 export { getCartService } from "./CartServices/getCartService.js";

@@ -174,6 +174,11 @@ const ProductReducer = (productState, { type, payload }) => {
         ...productState,
         cart: payload,
       };
+    case "UPDATE_QUANTITY":
+      return {
+        ...productState,
+        cart: payload,
+      };
     default:
       return productState;
   }

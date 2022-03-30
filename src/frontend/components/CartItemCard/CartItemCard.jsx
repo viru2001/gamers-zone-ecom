@@ -1,5 +1,5 @@
 import { useAuth, useProduct } from "../../context";
-import { removeFromCart } from "../../utils";
+import { removeFromCart, updateQuantity } from "../../utils";
 import "./CartItemCard.css";
 
 const CartItemCard = ({ product }) => {
@@ -12,6 +12,7 @@ const CartItemCard = ({ product }) => {
     savePercent,
     rating,
     qty,
+    _id,
   } = product;
   const {
     auth: { token },
@@ -68,6 +69,9 @@ const CartItemCard = ({ product }) => {
             <button
               type="button"
               className="btn btn-quantity btn-primary rounded-full"
+              onClick={() =>
+                updateQuantity("increment", _id, token, productDispatch)
+              }
             >
               <i className="fas fa-plus text-sm"></i>
             </button>
@@ -76,6 +80,9 @@ const CartItemCard = ({ product }) => {
               type="button"
               className="btn btn-quantity btn-outline btn-primary-outline rounded-full"
               disabled={qty <= 1}
+              onClick={() =>
+                updateQuantity("decrement", _id, token, productDispatch)
+              }
             >
               <i className="fas fa-minus text-sm"></i>
             </button>
