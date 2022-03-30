@@ -1,3 +1,4 @@
+export { checkout } from "./cart/checkout.js";
 export { updateQuantity } from "./cart/updateQuantity.js";
 export { removeFromCart } from "./cart/removeFromCart.js";
 export { isProductInCart } from "./cart/isProductInCart.js";

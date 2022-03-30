@@ -1,5 +1,27 @@
-const OrderDeatilsCard = ({ orderDetails }) => {
-  const { totalMRP, discount, delivery } = orderDetails;
+import { useProduct, useAuth } from "../../context";
+import { useNavigate } from "react-router-dom";
+import { checkout } from "../../utils";
+const OrderDeatilsCard = () => {
+  const navigate = useNavigate();
+  const {
+    auth: { token },
+  } = useAuth();
+  const [{ cart }, productDispatch] = useProduct();
+  const { totalMRP, discount, delivery } = cart.reduce(
+    (acc, currItem) => ({
+      ...acc,
+      totalMRP: acc.totalMRP + currItem.originalPrice * currItem.qty,
+      discount:
+        acc.discount +
+        (currItem.originalPrice - currItem.discountPrice) * currItem.qty,
+    }),
+    {
+      totalMRP: 0,
+      discount: 0,
+      delivery: 0,
+    }
+  );
+
   return (
     <div className="d-flex flex-col p-8">
       <h2 className="headline-md mb-2">Order Details</h2>
@@ -23,6 +45,11 @@ const OrderDeatilsCard = ({ orderDetails }) => {
         <button
           type="button"
           className="btn btn-primary rounded-sm text-sm p-3 w-100"
+          disabled={totalMRP <= 0}
+          onClick={() => {
+            checkout(cart, token, productDispatch);
+            navigate("/");
+          }}
         >
           Proceed to Checkout
         </button>
