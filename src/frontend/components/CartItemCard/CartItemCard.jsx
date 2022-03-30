@@ -1,5 +1,10 @@
 import { useAuth, useProduct } from "../../context";
-import { removeFromCart, updateQuantity } from "../../utils";
+import {
+  moveToWishlist,
+  removeFromCart,
+  updateQuantity,
+  isProductInWishlist,
+} from "../../utils";
 import "./CartItemCard.css";
 
 const CartItemCard = ({ product }) => {
@@ -17,7 +22,7 @@ const CartItemCard = ({ product }) => {
   const {
     auth: { token },
   } = useAuth();
-  const [, productDispatch] = useProduct();
+  const [{ wishlist }, productDispatch] = useProduct();
   const isDiscountGiven = savePercent === 0 ? false : true;
   return (
     <div className="card-wrapper d-flex mt-4 p-relative">
@@ -96,13 +101,15 @@ const CartItemCard = ({ product }) => {
               <i className="fas fa-trash mr-3"></i>
               Remove
             </button>
-            {/* <button
+            <button
               type="button"
               className="btn btn-primary rounded-sm text-sm p-3 ml-auto"
+              onClick={() => moveToWishlist(product, token, productDispatch)}
+              disabled={isProductInWishlist(wishlist, _id)}
             >
               <i className="fas fa-heart mr-3"></i>
               Move to Wishlist
-            </button> */}
+            </button>
           </div>
         </div>
       </div>

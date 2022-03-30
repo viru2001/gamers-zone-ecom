@@ -1,3 +1,4 @@
+export { moveToWishlist } from "./cart/moveToWishlist.js";
 export { moveToCart } from "./wishlist/moveToCart.js";
 export { checkout } from "./cart/checkout.js";
 export { updateQuantity } from "./cart/updateQuantity.js";
