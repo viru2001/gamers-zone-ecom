@@ -147,10 +147,19 @@ const ProductReducer = (productState, { type, payload }) => {
         ...productState,
         cart: productState.cart.filter(item => item._id !== payload),
       };
-    case "UPDATE_QUANTITY":
+    case "INCREASE_QUANTITY":
       return {
         ...productState,
-        cart: payload,
+        cart: productState.cart.map(item =>
+          item._id === payload ? { ...item, qty: item.qty + 1 } : item
+        ),
+      };
+    case "DECREASE_QUANTITY":
+      return {
+        ...productState,
+        cart: productState.cart.map(item =>
+          item._id === payload ? { ...item, qty: item.qty - 1 } : item
+        ),
       };
     case "CHECKOUT":
       return {
