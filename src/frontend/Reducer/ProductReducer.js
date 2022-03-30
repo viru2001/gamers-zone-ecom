@@ -145,7 +145,7 @@ const ProductReducer = (productState, { type, payload }) => {
     case "REMOVE_FROM_CART":
       return {
         ...productState,
-        cart: payload,
+        cart: productState.cart.filter(item => item._id !== payload),
       };
     case "UPDATE_QUANTITY":
       return {

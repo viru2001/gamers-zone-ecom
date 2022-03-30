@@ -91,7 +91,7 @@ const CartItemCard = ({ product }) => {
             <button
               type="button"
               className="btn btn-remove btn-outline btn-primary-outline rounded-sm text-sm p-3"
-              onClick={() => removeFromCart(product, token, productDispatch)}
+              onClick={() => removeFromCart(_id, token, productDispatch)}
             >
               <i className="fas fa-trash mr-3"></i>
               Remove
