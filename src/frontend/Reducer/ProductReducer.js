@@ -140,7 +140,7 @@ const ProductReducer = (productState, { type, payload }) => {
     case "ADD_TO_CART":
       return {
         ...productState,
-        cart: payload,
+        cart: [...productState.cart, { ...payload, qty: 1 }],
       };
     case "REMOVE_FROM_CART":
       return {
