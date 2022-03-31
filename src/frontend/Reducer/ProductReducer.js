@@ -13,6 +13,7 @@ const ProductInitialState = {
     price: 30000,
     rating: 0,
   },
+  wishlist: [],
 };
 
 const ProductReducer = (productState, { type, payload }) => {
@@ -106,6 +107,27 @@ const ProductReducer = (productState, { type, payload }) => {
       };
     case "CLEAR":
       return { ...productState, filters: ProductInitialState.filters };
+
+    case "FETCH_WISHLIST":
+      return {
+        ...productState,
+        wishlist: payload,
+      };
+    case "RESET_WISHLIST":
+      return {
+        ...productState,
+        wishlist: [],
+      };
+    case "ADD_TO_WISHLIST":
+      return {
+        ...productState,
+        wishlist: [...productState.wishlist, payload],
+      };
+    case "REMOVE_FROM_WISHLIST":
+      return {
+        ...productState,
+        wishlist: productState.wishlist.filter(item => item._id !== payload),
+      };
     default:
       return productState;
   }

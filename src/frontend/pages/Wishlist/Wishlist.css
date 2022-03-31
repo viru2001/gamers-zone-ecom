@@ -1,0 +1,5 @@
+#wishlist-cards-wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+  min-height: calc(100vh - 18rem);
+}

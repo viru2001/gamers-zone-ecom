@@ -1,14 +1,29 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth, useProduct } from "../../context";
+import {
+  addToWishlist,
+  isProductInWishlist,
+  removeFromWishlist,
+} from "../../utils";
 import "./ProductCard.css";
-const ProductCard = ({
-  discountPrice,
-  originalPrice,
-  img,
-  name,
-  tag,
-  savePercent,
-  rating,
-}) => {
+
+const ProductCard = ({ product, page }) => {
+  const {
+    discountPrice,
+    originalPrice,
+    img,
+    name,
+    tag,
+    savePercent,
+    rating,
+    _id,
+  } = product;
   const isDiscountGiven = savePercent === 0 ? false : true;
+  const {
+    auth: { status, token },
+  } = useAuth();
+  const [{ wishlist }, productDispatch] = useProduct();
+  const navigate = useNavigate();
   return (
     <div className="card-wrapper product-card place-center p-relative">
       {tag && (
@@ -50,22 +65,51 @@ const ProductCard = ({
           </div>
         </div>
       </div>
-      <div className="card-btns-wrapper p-3 d-flex flex-col">
-        <button
-          type="button"
-          className="btn btn-primary rounded-sm text-sm p-3 mx-4"
-        >
-          <i className="fas fa-shopping-cart mr-3"></i>
-          Add to Cart
-        </button>
-        <button
-          type="button"
-          className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
-        >
-          <i className="fas fa-heart mr-3"></i>
-          Add to Wishlist
-        </button>
-      </div>
+      {page === "Products" ? (
+        <div className="card-btns-wrapper p-3 d-flex flex-col">
+          <button
+            type="button"
+            className="btn btn-primary rounded-sm text-sm p-3 mx-4"
+          >
+            <i className="fas fa-shopping-cart mr-3"></i>
+            Add to Cart
+          </button>
+          {isProductInWishlist(wishlist, _id) ? (
+            <button
+              type="button"
+              className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
+              onClick={() => removeFromWishlist(_id, token, productDispatch)}
+            >
+              <i className="fas fa-heart mr-3"></i>
+              Remove From Wishlist
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
+              onClick={() =>
+                status
+                  ? addToWishlist(product, token, productDispatch)
+                  : navigate("/signin")
+              }
+            >
+              <i className="fas fa-heart mr-3"></i>
+              Add to Wishlist
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="card-btns-wrapper p-3 d-flex flex-col">
+          <button
+            type="button"
+            className="btn btn-outline btn-primary-outline rounded-sm text-sm p-3 mx-4"
+            onClick={() => removeFromWishlist(_id, token, productDispatch)}
+          >
+            <i className="fas fa-heart mr-3"></i>
+            Remove from Wishlist
+          </button>
+        </div>
+      )}
     </div>
   );
 };

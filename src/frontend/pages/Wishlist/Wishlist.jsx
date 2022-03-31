@@ -1,9 +1,10 @@
+import { ProductList } from "../../components";
+import { useProduct } from "../../context";
+import "./Wishlist.css";
+
 const Wishlist = () => {
-  return (
-    <>
-      <h1>Wishlist Page</h1>;
-    </>
-  );
+  const [{wishlist}] = useProduct();
+  return <ProductList products={wishlist} page={"Wishlist"} />;
 };
 
 export { Wishlist };

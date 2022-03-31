@@ -29,7 +29,7 @@ const Products = () => {
         console.log(e);
       }
     })();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const ProductsInPriceRange = getProductsInPriceRange(products, price);
@@ -42,7 +42,7 @@ const Products = () => {
   return (
     <div className="wrapper d-grid">
       <Filters />
-      <ProductList products={sortedProducts} />
+      <ProductList products={sortedProducts} page={"Products"} />
     </div>
   );
 };
