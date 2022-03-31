@@ -49,7 +49,7 @@ const Signup = () => {
             Email
           </label>
           <input
-            type="text"
+            type="email"
             className="text-input w-100 p-3 text-sm"
             placeholder="abc@gmail.com"
             required

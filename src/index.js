@@ -4,7 +4,6 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ProductProvider, AuthProvider } from "./frontend/context";
-// import { AuthProvider } from "./frontend/Context";
 
 // Call make Server
 makeServer();
