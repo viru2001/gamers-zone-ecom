@@ -9,10 +9,13 @@ const NavItem = ({ navItemTitle, number, icon, navigateTo }) => {
       <span className="p-relative">
         <i className={`fas fa-${icon} text-md`}></i>
         {number !== undefined && (
-          <span className="badge icon-badge-position text-sm font-wt-bold rounded-full p-absolute">
+          <span
+            className="badge icon-badge-position text-sm font-wt-bold rounded-full p-absolute"
+            style={number > 9 ? { padding: "1px 4px" } : { padding: "1px 8px" }}
+          >
             {number}
           </span>
-        ) }
+        )}
       </span>
       <span className="nav-link-description text-sm">{navItemTitle}</span>
     </Link>
