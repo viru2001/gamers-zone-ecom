@@ -7,6 +7,7 @@ const HamburgerNav = ({
   signOutHandler,
   setAuth,
   username,
+  cart,
 }) => {
   return (
     <section id="hamburger-nav-menu" class="d-none flex-wrap my-8">
@@ -17,7 +18,7 @@ const HamburgerNav = ({
           navigateTo={"/products"}
         />
         <NavItem
-          number={0}
+          number={cart.length}
           navItemTitle={"Cart"}
           icon={"shopping-cart"}
           navigateTo={"/cart"}

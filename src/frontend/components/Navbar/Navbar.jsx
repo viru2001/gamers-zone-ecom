@@ -19,7 +19,7 @@ const Navbar = () => {
       username: "",
     }));
   };
-  const [{ wishlist }] = useProduct();
+  const [{ cart, wishlist }] = useProduct();
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   return (
     <>
@@ -45,7 +45,7 @@ const Navbar = () => {
               navigateTo={"/products"}
             />
             <NavItem
-              number={0}
+              number={cart.length}
               navItemTitle={"Cart"}
               icon={"shopping-cart"}
               navigateTo={"/cart"}
@@ -83,6 +83,7 @@ const Navbar = () => {
         <HamburgerNav
           status={status}
           wishlist={wishlist}
+          cart={cart}
           signOutHandler={signOutHandler}
           setAuth={setAuth}
           username={username}
