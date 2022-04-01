@@ -1,0 +1,6 @@
+.cart-card-badge {
+  background-color: var(--success-color);
+  color: var(--dark-text-color);
+  top: 2rem;
+  font-size: 1rem;
+}
