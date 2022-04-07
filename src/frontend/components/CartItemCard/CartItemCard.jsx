@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAuth, useProduct } from "../../context";
 import {
   moveToWishlist,
@@ -23,9 +24,13 @@ const CartItemCard = ({ product }) => {
     auth: { token },
   } = useAuth();
   const [{ wishlist }, productDispatch] = useProduct();
+  const navigate = useNavigate();
   const isDiscountGiven = savePercent === 0 ? false : true;
   return (
-    <div className="card-wrapper d-flex mt-4 p-relative">
+    <div
+      className="card-wrapper d-flex mt-4 p-relative cursor-pointer"
+      onClick={() => navigate(`/products/${_id}`)}
+    >
       {tag && <span className="cart-card-badge p-3 p-absolute">{tag}</span>}
       <div className="p-4 container-center">
         <img
