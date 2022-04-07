@@ -45,13 +45,13 @@ const Navbar = () => {
               navigateTo={"/products"}
             />
             <NavItem
-              number={cart.length}
+              itemCount={cart.length}
               navItemTitle={"Cart"}
               icon={"shopping-cart"}
               navigateTo={"/cart"}
             />
             <NavItem
-              number={wishlist.length}
+              itemCount={wishlist.length}
               navItemTitle={"Wishlist"}
               icon={"heart"}
               navigateTo={"/wishlist"}

@@ -10,7 +10,7 @@ const HamburgerNav = ({
   cart,
 }) => {
   return (
-    <section id="hamburger-nav-menu" class="d-none flex-wrap my-8">
+    <section id="hamburger-nav-menu" className="d-none flex-wrap my-8">
       <nav className="nav-links d-flex align-center">
         <NavItem
           navItemTitle={"Products"}
@@ -18,13 +18,13 @@ const HamburgerNav = ({
           navigateTo={"/products"}
         />
         <NavItem
-          number={cart.length}
+          itemCount={cart.length}
           navItemTitle={"Cart"}
           icon={"shopping-cart"}
           navigateTo={"/cart"}
         />
         <NavItem
-          number={wishlist.length}
+          itemCount={wishlist.length}
           navItemTitle={"Wishlist"}
           icon={"heart"}
           navigateTo={"/wishlist"}
