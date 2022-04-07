@@ -15,6 +15,7 @@ const ProductInitialState = {
   },
   wishlist: [],
   cart: [],
+  searchQuery: "",
 };
 
 const ProductReducer = (productState, { type, payload }) => {
@@ -164,6 +165,11 @@ const ProductReducer = (productState, { type, payload }) => {
       return {
         ...productState,
         cart: [],
+      };
+    case "SEARCH_QUERY":
+      return {
+        ...productState,
+        searchQuery: payload,
       };
     default:
       return productState;
