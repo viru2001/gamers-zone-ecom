@@ -27,21 +27,24 @@ const CartItemCard = ({ product }) => {
   const navigate = useNavigate();
   const isDiscountGiven = savePercent === 0 ? false : true;
   return (
-    <div
-      className="card-wrapper d-flex mt-4 p-relative cursor-pointer"
-      onClick={() => navigate(`/products/${_id}`)}
-    >
+    <div className="card-wrapper d-flex mt-4 p-relative">
       {tag && <span className="cart-card-badge p-3 p-absolute">{tag}</span>}
       <div className="p-4 container-center">
         <img
-          className="img-responsive horizontal-card-img w-75"
+          className="img-responsive horizontal-card-img w-75 cursor-pointer"
           src={img}
           alt="monitor"
+          onClick={() => navigate(`/products/${_id}`)}
         />
       </div>
       <div className="p-3 w-100">
         <div className="product-info-wrapper">
-          <h2 className="cart-product-heading">{name}</h2>
+          <h2
+            className="cart-product-heading cursor-pointer"
+            onClick={() => navigate(`/products/${_id}`)}
+          >
+            {name}
+          </h2>
 
           <div className="pt-3">
             {
