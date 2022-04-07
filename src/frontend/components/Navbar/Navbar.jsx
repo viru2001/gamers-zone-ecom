@@ -4,6 +4,8 @@ import "./Navbar.css";
 import { useState } from "react";
 import { NavItem } from "./NavItem";
 import { HamburgerNav } from "./HamburgerNav";
+import { Logo } from "../../assets";
+
 const Navbar = () => {
   const {
     auth: { status, username },
@@ -25,10 +27,13 @@ const Navbar = () => {
     <>
       <header className="navbar-wrapper d-flex align-center justify-around box-shadow-lg">
         <Link
-          className="brand-name text-dec-none headline-lg font-wt-bold p-4"
+          className="brand-name text-dec-none headline-lg font-wt-bold p-4 d-flex align-center"
           to="/"
         >
-          Gamers Zone
+          <div className="nav-logo mr-4">
+            <img className="img-responsive" src={Logo} alt="logo" />
+          </div>
+          <span>Gamers Zone</span>
         </Link>
         <button
           id="hamburger-btn"

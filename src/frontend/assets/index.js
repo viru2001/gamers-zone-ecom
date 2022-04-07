@@ -17,7 +17,7 @@ import Monitor1 from "./Products/monitor1.png";
 import Monitor2 from "./Products/monitor2.png";
 import Chair1 from "./Products/chair1.png";
 import Chair2 from "./Products/chair2.png";
-
+import Logo from "./logo.png";
 export {
   SetupImg1,
   SetupImg2,
@@ -38,4 +38,5 @@ export {
   Monitor2,
   Chair1,
   Chair2,
+  Logo,
 };
