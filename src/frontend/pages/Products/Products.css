@@ -15,7 +15,9 @@
 /* full page grid layout */
 .wrapper {
   grid-template-columns: 35rem 1fr;
-  grid-template-areas: "filters products";
+  grid-template-areas:
+    "filters search"
+    "filters products";
 }
 
 #filters {
@@ -45,6 +47,7 @@
     grid-template-columns: 1fr;
     grid-template-areas:
       "filters filters"
+      "search search"
       "products products";
   }
   #filters {
@@ -55,4 +58,8 @@
   #products {
     width: 100vw;
   }
+}
+
+#search-box {
+  grid-area: search;
 }

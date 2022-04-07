@@ -1,3 +1,4 @@
+export { getSearchedProducts } from "./productFilters/getSearchedProducts.js";
 export { moveToWishlist } from "./cart/moveToWishlist.js";
 export { moveToCart } from "./wishlist/moveToCart.js";
 export { checkout } from "./cart/checkout.js";
