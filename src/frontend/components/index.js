@@ -1,3 +1,4 @@
+export { SingleProductPage } from "./SingleProductPage/SingleProductPage";
 export { OrderDetailsCard } from "./OrderDetailsCard/OrderDetailsCard";
 export { CartItemCard } from "./CartItemCard/CartItemCard";
 export { CartItemsList } from "./CartItemsList/CartItemsList";

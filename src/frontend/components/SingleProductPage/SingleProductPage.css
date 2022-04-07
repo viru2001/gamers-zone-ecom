@@ -1,0 +1,17 @@
+.product-img-wrapper {
+  min-width: 36rem;
+  width: 30rem;
+  align-self: center;
+}
+.product-detail-wrapper {
+  padding: 4rem;
+  max-width: 60rem;
+  width: 40rem;
+  min-width: 36rem;
+}
+.page-wrapper {
+  min-height: calc(100vh - 8rem);
+}
+.product-badge {
+  left: 0;
+}

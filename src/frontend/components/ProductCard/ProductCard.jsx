@@ -34,37 +34,42 @@ const ProductCard = ({ product, page }) => {
           {tag}
         </span>
       )}
-      <div className="px-4">
-        <img
-          className="img-responsive d-block m-auto product-card-img"
-          src={img}
-          alt="headphone"
-        />
-      </div>
-      <div className="p-2">
-        <p className="font-wt-bold text-center text-sm">{name}</p>
-      </div>
-      <div className="px-8 py-2">
-        {
-          <div className="product-price-wrapper">
-            <span className="product-discount-price text-sm font-wt-bold">
-              {`Rs. ${discountPrice}`}
-            </span>
-            {isDiscountGiven && (
-              <span className="product-original-price text-sm ml-6">{`Rs. ${originalPrice}`}</span>
-            )}
-          </div>
-        }
+      <div
+        className="cursor-pointer"
+        onClick={() => navigate(`/products/${_id}`)}
+      >
+        <div className="px-4">
+          <img
+            className="img-responsive d-block m-auto product-card-img"
+            src={img}
+            alt="headphone"
+          />
+        </div>
+        <div className="p-2">
+          <p className="font-wt-bold text-center text-sm">{name}</p>
+        </div>
+        <div className="px-8 py-2">
+          {
+            <div className="product-price-wrapper">
+              <span className="product-discount-price text-sm font-wt-bold">
+                {`Rs. ${discountPrice}`}
+              </span>
+              {isDiscountGiven && (
+                <span className="product-original-price text-sm ml-6">{`Rs. ${originalPrice}`}</span>
+              )}
+            </div>
+          }
 
-        <div className="w-100 d-flex">
-          {isDiscountGiven && (
-            <span className="product-discount font-wt-bold text-sm">{`Save ${savePercent}%`}</span>
-          )}
-          <div className="product-rating font-wt-bold text-sm ml-auto">
-            <span>{rating}</span>
-            <span>
-              <i className="fas fa-star ml-2"></i>
-            </span>
+          <div className="w-100 d-flex">
+            {isDiscountGiven && (
+              <span className="product-discount font-wt-bold text-sm">{`Save ${savePercent}%`}</span>
+            )}
+            <div className="product-rating font-wt-bold text-sm ml-auto">
+              <span>{rating}</span>
+              <span>
+                <i className="fas fa-star ml-2"></i>
+              </span>
+            </div>
           </div>
         </div>
       </div>
