@@ -60,4 +60,4 @@ jobs:
           app-name: 'gamers-zone'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B8AB0516FC884C2D80C6A5B3206B5E5D }}
-          package: .
+          package: release.zip
